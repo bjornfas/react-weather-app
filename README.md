@@ -4,5 +4,6 @@
 
 - https://ipwhois.io/ - Service for determining the city by IP
 - https://openweathermap.org/ - A popular service for getting weather data
-
+## Demo
+- https://react-weather-app-gules-kappa.vercel.app/
 
