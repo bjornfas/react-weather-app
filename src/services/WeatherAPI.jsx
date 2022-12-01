@@ -4,7 +4,7 @@ const _weatherApiKey = "c5ab95c268ce04805bfdde89b30d7a79";
 
 //Получить текущее название города по IP
 export const getCityName = async () => {
-    const request = await fetch("http://ipwho.is/?lang=en&fields=city");
+    const request = await fetch("https://ipwho.is/?lang=en&fields=city");
     if (!request.ok) {
         throw new Error(`Could not fetch url, status: ${request.status}`);
     }
