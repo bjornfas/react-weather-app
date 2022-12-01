@@ -70,7 +70,7 @@ const Header = ({setCity, city, setIsLoading, doUppercaseFirstLetter}) => {
                         </div>
                         <a 
                         href="https://github.com/bjornfas/react-weather-app" 
-                        className="header__link">
+                        className="header__link"
                         target="_blank" 
                         rel="noopener noreferrer">
                             <GitHub size={20}/>
