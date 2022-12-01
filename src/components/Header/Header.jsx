@@ -68,7 +68,11 @@ const Header = ({setCity, city, setIsLoading, doUppercaseFirstLetter}) => {
                         onClick={()=> setMobileSearch(!mobileSearch)}>
                             <Search size={20}/>
                         </div>
-                        <a href="#" className="header__link">
+                        <a 
+                        href="https://github.com/bjornfas/react-weather-app" 
+                        className="header__link">
+                        target="_blank" 
+                        rel="noopener noreferrer">
                             <GitHub size={20}/>
                         </a>
                         <a 
