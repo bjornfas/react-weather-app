@@ -1,0 +1,102 @@
+
+@import "../../scss/fonts";
+@import "../../scss/variables";
+@import "../../scss/mixins";
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.25);
+    transition: .2s all linear;
+}
+
+.animated {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal {
+    position: relative;
+    margin: 0 auto;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background-color: $bg-white;
+    padding: 40px;
+    border-radius: 20px;
+    max-width: 750px;
+    &__temp {
+        @include text-bold;
+        font-size: 60px;
+        color: $blue-saturated;
+        margin-bottom: 12px;
+    }
+    &__day {
+        font-size: 25px;
+        margin-bottom: 12px;
+    }
+    &__time {
+        font-size: 15px;
+        color: $text-gray;
+    }
+    &__city {
+        font-size: 15px;
+        color: $text-gray;
+    }
+    &__weather {
+        max-width: 50px;
+        margin-bottom: 12px;
+    }
+    &__description-item {
+        margin-bottom: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    &__icon {
+        width: 40px;
+        height: 40px;
+        margin-right: 20px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 1px 4px 10px -1px $blue;
+    }
+    &__description-title {
+        margin-right: 20px;
+        color: $text-gray;
+        @include text-regular;
+    }
+    &__description-text {
+        @include text-bold;
+    }
+    &__close {
+        position: absolute;
+        background-image: url("../../images/close.png");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        cursor:pointer;
+        width: 18px;
+        height: 18px;
+        right: 20px;
+        top: 20px;
+    }
+
+}
+

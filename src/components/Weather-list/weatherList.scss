@@ -1,0 +1,53 @@
+@import "../../scss/fonts";
+@import "../../scss/mixins";
+@import "../../scss/variables";
+
+.weather-list {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 20px;
+    background-color: $bg-white;
+    box-shadow: 2px 5px 25px -3px rgba(180, 180, 180, 0.25);
+    border-radius: 20px;   
+    margin-bottom: 50px;
+    min-height: 275px;
+    &__item {
+        flex-grow: 1;
+        min-width: 18%;
+        max-width: 18%;
+        padding: 10px;
+        background-color: $blue;
+        border-radius: 10px;
+        transition: .3s all;
+        color: $text-black;
+        cursor: pointer;
+        &:hover {
+            background-color: rgba(71, 147, 255, 0.4);
+        }
+    }
+    &__day {
+        margin-bottom: 10px;
+        @include text-bold;
+    }
+    &__date {
+        color: $text-gray;
+        margin-bottom: 15px;
+    }
+    &__image {
+        max-width: 50px;
+        margin-bottom: 15px;
+    }
+    &__deg {
+        margin-bottom: 5px;
+        @include text-bold; 
+    }
+    &__felt {
+        color: $text-gray;
+        margin-bottom: 5px;
+    }
+    &__status {
+        color: $text-gray;
+    }
+}

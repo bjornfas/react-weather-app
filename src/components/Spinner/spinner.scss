@@ -1,0 +1,10 @@
+@import "../../scss/fonts";
+@import "../../scss/mixins";
+@import "../../scss/variables";
+
+.spinner {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+}

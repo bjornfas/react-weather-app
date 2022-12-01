@@ -1,0 +1,91 @@
+
+@import "../../scss/fonts";
+@import "../../scss/mixins";
+@import "../../scss/variables";
+
+.header {
+    padding: 30px 0 55px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &__info {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+    &__links {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        position: relative;
+    }
+    &__link {
+        width: 40px;
+        height: 40px;
+        background-color: $blue;
+        border-radius: 10px;
+        padding: 10px 10px 5px 10px;
+        cursor: pointer;
+        color: $text-black;
+        margin-right: 15px;
+        transition: .3s all;
+        &:last-child {
+            margin-right: 0;
+        }
+        &:hover {
+            background-color: rgba(71, 147, 255, 0.4);
+        }
+    }
+}
+
+.search {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    max-width: 200px;
+    align-items: center;
+    margin-right: 30px;
+    padding: 10px 20px;
+    color: $text-black;
+    background-color: $blue;
+    border-radius: 10px;
+    box-sizing:border-box;
+    @include text-bold;
+    &__input {
+        width: 100%;
+        font-size: 16px;
+        &::placeholder {
+            color: $text-black;
+        }
+    }
+}
+
+.search-mobile {
+    display: none;
+    position: relative;
+}
+
+.mobile-form {
+    position: absolute;
+    bottom: -50px;
+    left: 0;
+    min-width: 150px;
+    padding: 10px 10px;
+    color: $text-black;
+    background-color: $blue;
+    border-radius: 10px;
+    box-sizing:border-box;
+    z-index: 999;
+    @include text-bold;
+    &__input {
+        width: 100%;
+        font-size: 14px;
+        &::placeholder {
+            color: $text-black;
+        }
+    }
+}
+
+
+
+

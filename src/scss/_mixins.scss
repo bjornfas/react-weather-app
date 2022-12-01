@@ -1,0 +1,10 @@
+
+//Text
+@mixin text-bold {
+    font-family: "Montserrat-Medium", sans-serif;
+    font-size: 18px;
+}
+
+@mixin text-regular {
+    font-size: 14px;
+}
