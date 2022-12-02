@@ -1,6 +1,6 @@
 
 //React
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 
 //Components
 import Header from "./components/Header/Header";
@@ -28,9 +28,9 @@ const App = () => {
 	const onError = () => {
 		setError(true);
 		setIsLoading(false);
-		// setTimeout(()=> {
-		// 	window.location.reload();
-		// }, 5000)
+		setTimeout(()=> {
+			window.location.reload();
+		}, 5000)
 	}
 
 	const onChangeCoord = (city) => {
