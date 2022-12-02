@@ -1,6 +1,10 @@
 
 //Components
-import getCurrentImage from "../../services/CurrentWeatherIcon";
+import getCurrentImage from "../../utils/CurrentWeatherIcon";
+import ModalDescription from "../../ModalDescription/ModalDescription";
+
+//Utils
+import { doValueFixed, doUppercaseFirstLetter, getMonth, getDayOfTheMonth, getWeekDay } from "../../utils/Utils";
 
 //Images
 import Precipitation from "../../images/precipitation.png";
@@ -13,9 +17,31 @@ import "./modal.scss";
 
 const Modal = ({isOpen, setIsOpen, ...props}) => {
 
-    const {data, date, temp, tempFeels, weatherName, 
-          weatherStatus, pressure, wind, doValueFixed, doUppercaseFirstLetter, 
-          getWeekDay, getMonth, getDayOfTheMonth } = props;
+    const {data, date, temp, tempFeels,
+        weatherName, weatherStatus, pressure, wind} = props;
+
+    const description = [
+        {
+            name: "Температура",
+            text: `${doValueFixed(temp)}° ощущается как ${doValueFixed(tempFeels)}°`,
+            image: `${Temp}`
+        },
+        {
+            name: "Давление",
+            text: `${pressure} мм ртутного столба`,
+            image: `${Pressure}`
+        },
+        {
+            name: "Осадки",
+            text: `${weatherStatus}`,
+            image: `${Precipitation}`
+        },
+        {
+            name: "Ветер",
+            text: `${doValueFixed(wind)} м/с`,
+            image: `${Wind}`
+        }
+    ];
 
     //Закрытие модального окна по клику
     const onCloseModal = (e) => {
@@ -43,40 +69,7 @@ const Modal = ({isOpen, setIsOpen, ...props}) => {
                     </div>
                 </div>
                 <div className="modal__description">
-                    <div className="modal__description-item">
-                        <div className="modal__icon">
-                            <img src={Temp} alt="Temperature" />
-                        </div>
-                        <div className="modal__description-title">Температура</div>
-                        <div className="modal__description-text">
-                            {`${doValueFixed(temp)}° ощущается как ${doValueFixed(tempFeels)}°`}
-                        </div>
-                    </div>
-                    <div className="modal__description-item">
-                        <div className="modal__icon">
-                            <img src={Pressure} alt="Pressure" />
-                        </div>
-                        <div className="modal__description-title">Давление </div>
-                        <div className="modal__description-text">
-                            {`${pressure} мм ртутного столба`}
-                        </div>
-                    </div>
-                    <div className="modal__description-item">
-                        <div className="modal__icon">
-                            <img src={Precipitation} alt="Precipitation" />
-                        </div>
-                        <div className="modal__description-title">Осадки</div>
-                        <div className="modal__description-text">
-                            {weatherStatus}
-                        </div>
-                    </div>
-                    <div className="modal__description-item">
-                        <div className="modal__icon">
-                            <img src={Wind} alt="Wind" />
-                        </div>
-                        <div className="modal__description-title">Ветер</div>
-                        <div className="modal__description-text">{`${doValueFixed(wind)} м/с`}</div>
-                    </div>
+                    <ModalDescription description={description}/>
                 </div>
                 <div className="modal__close"></div>
             </div>

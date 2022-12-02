@@ -1,16 +1,19 @@
+
 //React
 import { useState } from "react";
 
 //Components
-import getCurrentImage from "../../services/CurrentWeatherIcon";
+import getCurrentImage from "../../utils/CurrentWeatherIcon";
 import Modal from "../Modal/Modal";
+
+//Utils
+import { doValueFixed, doUppercaseFirstLetter, getMonth, getDayOfTheMonth, getWeekDay } from "../../utils/Utils";
 
 const WeatherListItem = ({...props}) => {
 
     const [isOpen, setIsOpen] = useState(false);
 
-    const {date,temp, tempFeels, weatherName, weatherStatus, 
-          doValueFixed, doUppercaseFirstLetter,getMonth, getDayOfTheMonth, getWeekDay} = props;
+    const {date,temp, tempFeels, weatherName, weatherStatus} = props;
 
     const onOpenModal = () => {
         setIsOpen(true);

@@ -2,6 +2,9 @@
 //React
 import { useEffect, useState } from "react";
 
+//Utils
+import { doUppercaseFirstLetter } from "../../utils/Utils";
+
 //Feather
 import { GitHub, Send, Search } from "react-feather";
 
@@ -12,7 +15,7 @@ import Logo from "../../images/logo.svg";
 import "./header.scss";
 
 
-const Header = ({setCity, city, setIsLoading, doUppercaseFirstLetter}) => {
+const Header = ({setIsLoading, onChangeCoord}) => {
 
     const [searchValue, setSearchValue] = useState("");
     const [mobileSearch, setMobileSearch] = useState(false);
@@ -25,13 +28,10 @@ const Header = ({setCity, city, setIsLoading, doUppercaseFirstLetter}) => {
     //При отправке формы меняет значение стейта city
     const onSubmit = (e) => {
         e.preventDefault();
-        setCity(doUppercaseFirstLetter(searchValue.toLowerCase()));
+        setIsLoading(true);
+        onChangeCoord(doUppercaseFirstLetter(searchValue.toLowerCase()));
         setMobileSearch(false);
     }
-
-    useEffect(()=> {
-        setIsLoading(true);
-    }, [city])
 
     return (
         <div className="container">
