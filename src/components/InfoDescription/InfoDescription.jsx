@@ -7,8 +7,8 @@ const InfoDescription = ({description}) => {
                     <div className="info__icon">
                         <img src={item.image} alt="Temperature" />
                     </div>
-                    <div className="info__description-title">{item.name}</div>
-                    <div className="info__description-text">
+                    <div className="info__title">{item.name}</div>
+                    <div className="info__text">
                         {item.text}
                     </div>
                 </div>

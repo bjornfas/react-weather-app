@@ -1,6 +1,6 @@
 
 //React
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 //Utils
 import { doUppercaseFirstLetter } from "../../utils/Utils";
@@ -35,7 +35,7 @@ const Header = ({setIsLoading, onChangeCoord}) => {
 
     return (
         <div className="container">
-            <header className="header">
+            <header className="header page__header">
                 <a href="/">
                     <img src={Logo} alt="Logo"/>
                 </a>
@@ -51,20 +51,20 @@ const Header = ({setIsLoading, onChangeCoord}) => {
                         <Search size={20}/> 
                     </form>
                     <div className="header__links">
-                            <form 
-                            className="mobile-form" 
-                            onSubmit={onSubmit} 
-                            style={mobileSearch ? {display: "block"} : {display: "none"}} >
-                                <input 
-                                className="mobile-form__input" 
-                                type="text" 
-                                placeholder="Введите город..."
-                                spellCheck="false"
-                                onChange={onValueChange} 
-                                value={searchValue}/>
-                            </form>
+                        <form 
+                        className="mobile-form" 
+                        onSubmit={onSubmit} 
+                        style={mobileSearch ? {display: "block"} : {display: "none"}} >
+                            <input 
+                            className="mobile-form__input" 
+                            type="text" 
+                            placeholder="Введите город..."
+                            spellCheck="false"
+                            onChange={onValueChange} 
+                            value={searchValue}/>
+                        </form>
                         <div 
-                        className="header__link search-mobile" 
+                        className="header__link header__link--mobile" 
                         onClick={()=> setMobileSearch(!mobileSearch)}>
                             <Search size={20}/>
                         </div>

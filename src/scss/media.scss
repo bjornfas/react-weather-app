@@ -17,15 +17,15 @@
 @media (max-width: 992px) {
     .info {
         flex-direction: column;
-        &-main {
-            min-width: 100%;
-            margin-bottom: 20px;
-        }
-        &-secondary {
-            min-width: 100%;
-        }
         &__item {
             min-height: 215px;
+            &--main {
+                min-width: 100%;
+                margin-bottom: 20px;
+            }
+            &--secondary {
+                min-width: 100%;
+            }
         }
         &__temperature {
             justify-content: center;
@@ -33,11 +33,11 @@
         }
         &__city {
             text-align: center;
-        }
+        }  
         &__description {
             justify-content: center;
             margin-bottom: 5px;
-        }
+        } 
     }
     .weather-list {
         &__item {
@@ -48,11 +48,14 @@
 }
 
 @media (max-width: 768px) {
+
+    .header__link {
+        &--mobile {
+            display: block;
+        }
+    }
     .search {
         display: none;
-    }
-    .search-mobile {
-        display: block;
     }
     .modal {
         max-width: 450px;
@@ -66,17 +69,17 @@
         &__city {
             margin-bottom: 10px;
         }
-        &__description-text {
+        &__text {
             font-size: 14px;
         }
-        &__description-item {
+        &__item {
             margin-bottom: 5px;
         }
     } 
 }
 
 @media (max-width: 576px) {
-    .header {
+    .page__header {
         flex-direction: column;
     }
     .info {
@@ -90,11 +93,11 @@
         &__icon {
             margin-right: 0;
         }
-        &__description-title {
+        &__title {
             margin-right: 0;
             margin-bottom: 5px;
         }
-        &__description-text {
+        &__text {
             font-size: 16px;
         }
     }
@@ -108,10 +111,11 @@
             margin-bottom: 5px;
         }
     }
+     
     .modal {
-        max-width: 300px;
         justify-content: center;
         padding: 15px;
+        max-width: 300px;
         &__temp {
             font-size: 30px;
             margin-bottom: 5px;
@@ -119,11 +123,11 @@
         &__icon {
             margin-right: 0;
         }
-        &__description-title {
+        &__title {
             margin-right: 0;
         }
-        &__description-item {
+        &__item {
             flex-direction: column;
         }
-    } 
+    }
 }

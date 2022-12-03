@@ -23,7 +23,7 @@
     visibility: visible;
 }
 
-.modal {
+.page__modal {
     position: relative;
     margin: 0 auto;
     top: 50%;
@@ -32,8 +32,11 @@
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
-    background-color: $bg-white;
     padding: 40px;
+}
+
+.modal {
+    background-color: $bg-white;
     border-radius: 20px;
     max-width: 750px;
     &__temp {
@@ -58,7 +61,7 @@
         max-width: 50px;
         margin-bottom: 12px;
     }
-    &__description-item {
+    &__item {
         margin-bottom: 25px;
         display: flex;
         align-items: center;
@@ -77,12 +80,12 @@
         justify-content: center;
         box-shadow: 1px 4px 10px -1px $blue;
     }
-    &__description-title {
+    &__title {
         margin-right: 20px;
         color: $text-gray;
         @include text-regular;
     }
-    &__description-text {
+    &__text {
         @include text-bold;
     }
     &__close {

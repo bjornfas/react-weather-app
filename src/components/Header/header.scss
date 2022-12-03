@@ -3,11 +3,14 @@
 @import "../../scss/mixins";
 @import "../../scss/variables";
 
-.header {
+.page__header {
     padding: 30px 0 55px 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+.header {
     &__info {
         display: flex;
         align-items: center;
@@ -29,6 +32,10 @@
         color: $text-black;
         margin-right: 15px;
         transition: .3s all;
+        &--mobile {
+            display: none;
+            position: relative;
+        }
         &:last-child {
             margin-right: 0;
         }
@@ -58,11 +65,6 @@
             color: $text-black;
         }
     }
-}
-
-.search-mobile {
-    display: none;
-    position: relative;
 }
 
 .mobile-form {

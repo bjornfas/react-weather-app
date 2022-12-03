@@ -18,20 +18,22 @@ const Info = ({...props}) => {
     const contentSecond = !(errorMessage || spinner) ? <InfoSecondary data={data} /> : null;
    
     return (
-        <div className="container">
-            <div className="info">
-                <div className="info__item info-main">
-                    {errorMessage}
-                    {spinner}
-                    {contentMain}
-                </div>
-                <div className="info__item info-secondary">
-                    {errorMessage}
-                    {spinner}
-                    {contentSecond}                   
+        <section>
+            <div className="container">
+                <div className="info page__info">
+                    <div className="info__item info__item--main">
+                        {errorMessage}
+                        {spinner}
+                        {contentMain}
+                    </div>
+                    <div className="info__item info__item--secondary">
+                        {errorMessage}
+                        {spinner}
+                        {contentSecond}                   
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
     );
 }
 

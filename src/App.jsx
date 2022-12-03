@@ -22,7 +22,6 @@ const App = () => {
 	const [isLoading, setIsLoading] = useState(true);
     const [latitude, setLatitude] = useState("");
     const [longitude, setLongitude] = useState("");
-	const [city, setCity] = useState("");
 	const [error, setError] = useState(false);
 
 	const onError = () => {
@@ -45,14 +44,13 @@ const App = () => {
     useEffect(()=>{
 		getCityName()
 		.then(res => {
-			setCity(res.city);
 			onChangeCoord(res.city);
 		})
 		.catch(onError);
     },[])
 
 	useEffect(()=> {
-		if ( city && latitude || longitude !== "") {
+		if (latitude && longitude !== "" ) {
 			getWeather(longitude, latitude)
 			.then(res => {
 				setData(res);
@@ -72,13 +70,15 @@ const App = () => {
 			<Header setIsLoading={setIsLoading} onChangeCoord={onChangeCoord}/>
 			<main>
 				<Info data={data} date={date} isLoading={isLoading} error={error} />
-				<div className="container">
-					<div className="weather-list"> 
-						{errorMessage}
-						{spinner}
-						{weatherList}  	
+				<section>
+					<div className="container">
+						<div className="weather-list page__weather-list"> 
+							{errorMessage}
+							{spinner}
+							{weatherList}  	
+						</div>
 					</div>
-				</div>
+				</section>
 			</main>
 		</>
 	);

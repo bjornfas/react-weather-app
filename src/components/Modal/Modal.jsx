@@ -53,9 +53,11 @@ const Modal = ({isOpen, setIsOpen, ...props}) => {
          }
     }
 
+    const className = !isOpen ? `overlay animated` : `overlay show`;
+
     return (
-        <div className={!isOpen? `overlay animated` : `overlay show`} onClick={onCloseModal}>
-            <div className="modal">
+        <div className={className} onClick={onCloseModal}>
+            <div className="modal page__modal">
                 <div className="modal__info">
                     <div className="modal__temp">
                         {`${doValueFixed(temp)}°`}
